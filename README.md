@@ -1,31 +1,39 @@
 # SuprematismTooltip
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.16.
+_I was partly through making this directive when it because clear something more than a tooltip was desired. While this note exists, consider this directive as still a work in progress (eg, no tests, lacking documentation, etc)_
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+An Angular 2 tooltip directive.
 
-## Code scaffolding
+Currently it is built atop [concise.css](http://concisecss.com/) (and so it is a peer dependency of this npm module). This directive intentionally abstracts away concise.css specific implementation details.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class`.
 
-## Build
+### Attibute Directives
+- [`supreTooltipText`](#supreTooltipText)
+- [`supreTooltipPosition`](#supreTooltipPosition)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-## Running unit tests
+#### <a id="supreTooltipText"></a> `supreTooltipText`
+An attribute directive for the tooltip text, accepting a string.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+#### <a id="supreTooltipPosition"></a> `supreTooltipPosition`
+An attribute directive for the tooltip position, accepting 'top'|'right'|'bottom'|'left' which defaults to 'top'.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/). 
-Before running the tests make sure you are serving the app via `ng serve`.
 
-## Deploying to Github Pages
+### Example
+```html
+<span
+  [supreTooltipText]="'The Browns have a history of losing to the bye week'"
+  [supreTooltipPosition]="'right'">
+    The Browns are likely to go 0-17 this year.
+</span>
+```
+Run the example locally with
+```bash
+npm run example
+```
 
-Run `ng github-pages:deploy` to deploy to Github Pages.
-
-## Further help
-
-To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Installation
+```bash
+npm i -S CINBCUniversal/suprematism-tooltip
+```
